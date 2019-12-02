@@ -55,6 +55,27 @@ img {
   z-index: 1071;
 }
 
+.preview .tk-navbar {
+  background-color: #db9900;
+}
+.preview header p {
+  color: #fff;
+  font-size: small;
+  padding: 0px;
+  margin: 0px;
+}
+.preview  .warn {
+    position: absolute;
+    top: 1px;
+    left: 82px;
+}
+.preview .version {
+    position: absolute;
+    top: 1px;
+    right: 20px;
+}
+
+
 .tk-navbar .navbar-nav-svg {
   display: inline-block;
   width: 1rem;
