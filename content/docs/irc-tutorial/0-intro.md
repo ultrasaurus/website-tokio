@@ -6,10 +6,66 @@ menu:
     parent: tutorial
 ---
 
-Run a manual sweep of anomalous airborne or electromagnetic readings. Radiation levels in our atmosphere have increased by 3,000 percent. Electromagnetic and subspace wave fronts approaching synchronization. What is the strength of the ship's deflector shields at maximum output? The wormhole's size and short period would make this a local phenomenon. Do you have sufficient data to compile a holographic simulation?
+Internet Relay Chat (IRC) is a simple, text protocol<sup>[[1]](#IRC)</sup>. This tutorial uses a subset of the IRC protocol to implement a chat bot. 
 
-We're acquainted with the wormhole phenomenon, but this... Is a remarkable piece of bio-electronic engineering by which I see much of the EM spectrum ranging from heat and infrared through radio waves, et cetera, and forgive me if I've said and listened to this a thousand times. This planet's interior heat provides an abundance of geothermal energy. We need to neutralize the homing signal.
+We'll start with the basics of asynchronous reading and writing, then create a client library and a simple bot that uses that library, demonstrating tokio core concepts along the way.  
 
-Shields up. I recommend we transfer power to phasers and arm the photon torpedoes. Something strange on the detector circuit. The weapons must have disrupted our communicators. You saw something as tasty as meat, but inorganically materialized out of patterns used by our transporters. Captain, the most elementary and valuable statement in science, the beginning of wisdom, is 'I do not know.' All transporters off.
+In this tutorial, we'll use the network utility `socat` for helpful tracing (and as an SSL proxy) and connect to a hosted IRC service (gitter).  
 
-Resistance is futile.
+## IRC account setup
+
+1. [Join our gitter bot community](https://gitter.im/irc-tokio/community)
+2. get IRC password from: https://irc.gitter.im/
+
+For the tutorial we'll use environment variables for convenvience:
+```bash,ignore
+export USER='ultrasaurus_twitter'
+export PASS='...redacted...'
+```
+
+## Connect using socat
+
+To get a feel for `socat`, let's just connect via `stdin`.  The following 
+command takes input from stdin and sends it to `irc.gitter.im` on port `6667`. (`verify=0` turns off ssl verification checks, which we would not want to do for a real client, but is awesome for getting started quick in a tutorial.)  After typing the command below, we need to authenticate quickly or gitter will timeout the connection:
+
+```
+echo PASS $PASS
+socat -v stdin ssl:irc.gitter.im:6667,verify=0
+```
+
+Now, past 
+
+3. Type the following on the command line:
+
+```
+socat -v tcp4-listen:1234,reuseaddr,fork ssl:irc.gitter.im:6667,verify=0
+```
+
+PASS $PASS
+
+PONG irc.gitter.im
+
+
+
+"PASS $PASS\r\nNICK $USER\r\nUSER $USER 0 * $USER\r\n"
+
+
+PASS $PASS NICK $USER
+USER $USER 0 * $USER
+
+
+PONG irc.gitter.im
+
+socat -v stdin ssl:irc.gitter.im:6667,verify=0
+
+
+---
+
+<a name="IRC">[1]</a> [RFC 2812](https://tools.ietf.org/html/rfc2812) IRC Client Protocol
+
+
+
+
+
+
+
