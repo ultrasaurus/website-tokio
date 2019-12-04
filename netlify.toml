@@ -5,14 +5,14 @@
   publish = "public/"
 
   # Default build command.
-  command = "hugo --baseURL https://tokio.netlify.com/"
+  command = "./ci/test.sh && hugo --baseURL https://tokio.netlify.com/"
 
   # DEPLOY_PRIME_URL = https://master--tokio.netlify.com/
   # DEPLOY_URL = https://5de59b16efd40d000a976eb0--tokio.netlify.com
 
 
   [context.deploy-preview]
-  command = "hugo -b $DEPLOY_PRIME_URL"
+  command = "./ci/test.sh && hugo -b $DEPLOY_PRIME_URL"
 
   [context.branch-deploy]
-  command = "hugo -b $DEPLOY_PRIME_URL"
+  command = "./ci/test.sh && hugo -b $DEPLOY_PRIME_URL"
