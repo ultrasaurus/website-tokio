@@ -10,6 +10,9 @@ menu:
     - identifier: "getting_started"
       name: "Getting started"
       weight: 1000
+    - identifier: "tutorial"
+      name: "Tutorial"
+      weight: 2000
     - identifier: "reference"
       name: "API documentation"
       url: "https://docs.rs/tokio"
