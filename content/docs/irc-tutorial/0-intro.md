@@ -6,11 +6,15 @@ menu:
     parent: tutorial
 ---
 
-Internet Relay Chat (IRC) is a simple, text protocol<sup>[[1]](#IRC)</sup>. This tutorial uses a subset of the IRC protocol to implement a chat bot. 
+Internet Relay Chat (IRC) is a simple, text protocol<sup>[[1]](#IRC)</sup>.
+This tutorial uses a subset of the IRC protocol to implement a chat bot. 
 
-We'll start with the basics of asynchronous reading and writing, then create a client library and a simple bot that uses that library, demonstrating tokio core concepts along the way.  
+We'll start with the basics of asynchronous reading and writing, then create a
+client library and a simple bot that uses that library, demonstrating tokio core
+concepts along the way.  
 
-In this tutorial, we'll use the network utility `socat` for helpful tracing (and as an SSL proxy) and connect to a hosted IRC service (gitter).  
+In this tutorial, we'll use the network utility `socat` for helpful tracing
+(and as an SSL proxy) and connect to a hosted IRC service (gitter).  
 
 ## IRC account setup
 
